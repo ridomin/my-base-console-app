@@ -34,9 +34,9 @@ namespace MyBaseConsoleApp
                                             .Build();
 
             var serviceCollection = new ServiceCollection();
-            serviceCollection.AddLogging(configure => 
-                configure.AddConsole(ops => ops.TimestampFormat = "hh:mm:ss")
-            .AddConfiguration(configuration.GetSection("Logging")))
+            serviceCollection.AddLogging(configure => configure.AddConsole(ops => ops.TimestampFormat = "hh:mm:ss")
+                .AddConfiguration(configuration.GetSection("Logging")))
+            .AddSingleton(typeof(IConfiguration), configuration)
             .AddTransient<MyClass>();
 
             //LogLevel minLevel = Enum.Parse<LogLevel>(configuration["Logging:Console:LogLevel:Default"].ToString());
