@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "MyBaseConsoleApp": {
+      "commandName": "Project",
+      "environmentVariables": {
+        "NETCORE_ENVIRONMENT": "development"
+      }
+    }
+  }
+}
