@@ -34,5 +34,5 @@ jobs:
       - uses: actions/upload-artifact@v1
         with:
           name: mybaseconsole
-          path: ./my-base-console-app/
+          path: ./MyBaseConsoleApp/bin/Release/netcoreapp3.0/
     
