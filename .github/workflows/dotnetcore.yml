@@ -18,4 +18,5 @@ jobs:
     - uses: actions/upload-artifact@v1
       with:
         name: mybaseconsole
-        path: /home/runner/work/**/Release/**
+        path: /home/runner/work/*
+    
