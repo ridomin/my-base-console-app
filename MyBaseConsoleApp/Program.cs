@@ -15,7 +15,7 @@ namespace MyBaseConsoleApp
         static async Task Main(string[] args)
         {
             Console.WriteLine("starting");
-            ServiceProvider serviceProvider = ConfigureServices();
+            ServiceProvider serviceProvider = ConfigureServices(args);
 
             var myClass = serviceProvider.GetService<MyClass>();
 
@@ -31,7 +31,7 @@ namespace MyBaseConsoleApp
             Console.ReadLine();
         }
 
-        private static ServiceProvider ConfigureServices()
+        private static ServiceProvider ConfigureServices(string[] args)
         {
             var devEnvironmentVariable = Environment.GetEnvironmentVariable("NETCORE_ENVIRONMENT");
             var isDevelopment = string.IsNullOrEmpty(devEnvironmentVariable) || 
@@ -39,6 +39,7 @@ namespace MyBaseConsoleApp
             
             IConfigurationBuilder builder = new ConfigurationBuilder()
                 .AddJsonFile("appsettings.json")
+                .AddCommandLine(args)
                 .AddEnvironmentVariables();
                                             
 
