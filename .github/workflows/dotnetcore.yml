@@ -34,5 +34,5 @@ jobs:
       - uses: actions/upload-artifact@v1
         with:
           name: mybaseconsole
-          path: '**/Release'
+          path: '**/bin/Release/'
     
