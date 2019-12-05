@@ -2,12 +2,14 @@
   "profiles": {
     "MyBaseConsoleApp": {
       "commandName": "Project",
+      "commandLineArgs": "/cmdLineParam1=cmdLineValue1",
       "environmentVariables": {
         "NETCORE_ENVIRONMENT": "development"
       }
     },
     "Docker": {
-      "commandName": "Docker"
+      "commandName": "Docker",
+      "commandLineArgs": "/cmdLineParam1=cmdLineValue1"
     }
   }
 }

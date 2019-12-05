@@ -52,8 +52,12 @@ namespace MyBaseConsoleApp
 
             var serviceCollection = new ServiceCollection();
             serviceCollection.Configure<MyClass>(configuration.GetSection("MyClass"));
-            serviceCollection.AddLogging(configure => configure.AddConsole(ops => ops.TimestampFormat = "hh:mm:ss")
-                .AddConfiguration(configuration.GetSection("Logging")))
+
+
+
+            serviceCollection.AddLogging(configure => configure
+                                            .AddConsole(ops => ops.TimestampFormat = "hh:mm:ss")
+                                .AddConfiguration(configuration.GetSection("Logging")))
             .AddSingleton(typeof(IConfiguration), configuration)
             .AddTransient<MyClass>();
 

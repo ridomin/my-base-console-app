@@ -22,6 +22,8 @@ namespace MyBaseConsoleApp
         {
             var configKey1 = _conf.GetSection("MyClass").GetValue<string>("ConfigKey1");
             _logger.LogWarning($"Warn Start DoWork, configKey1: {configKey1}");
+            var cmdLineConfig = _conf.GetValue<string>("cmdLineParam1");
+            _logger.LogInformation($"Value from CmdLine: {cmdLineConfig}");
 
         }
 
